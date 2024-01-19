@@ -17,9 +17,11 @@ export type eNetwork =
   | eHarmonyNetwork
   | eFantomNetwork
   | eOptimismNetwork
-  | eTenderlyNetwork;
+  | eTenderlyNetwork
+  | eLocalhost;
 
 type eTenderlyNetwork = "tenderly";
+export type eLocalhost = "localhost";
 
 export enum eFantomNetwork {
   main = "fantom",

@@ -78,6 +78,7 @@ export const CommonsConfig: ICommonConfiguration = {
       [eFantomNetwork.main]: true,
       [eHarmonyNetwork.main]: true,
       [eAvalancheNetwork.avalanche]: true,
+      [eEthereumNetwork.sepolia]: true,
     },
     rewards: {
       [eArbitrumNetwork.arbitrumTestnet]: {

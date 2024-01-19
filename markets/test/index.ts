@@ -1,6 +1,5 @@
 import {
-  rateStrategyStableOne,
-  rateStrategyStableTwo,
+  rateStrategyStableMTBill,
   rateStrategyVolatileOne,
 } from "./rateStrategies";
 import { ZERO_ADDRESS } from "../../helpers";
@@ -17,6 +16,7 @@ import {
   strategyAAVE,
   strategyLINK,
   strategyWETH,
+  strategyMTBill,
 } from "./reservesConfigs";
 
 // ----------------
@@ -25,12 +25,17 @@ import {
 
 export const AaveMarket: IAaveConfiguration = {
   ...CommonsConfig,
+  RateStrategies: {
+    rateStrategyStableMTBill,
+    rateStrategyVolatileOne,
+  },
   MarketId: "Testnet Aave Market",
   ProviderId: 8080,
   ReservesConfig: {
     AAVE: strategyAAVE,
     DAI: strategyDAI,
     USDC: strategyUSDC,
+    MTBILL: strategyMTBill,
     WETH: strategyWETH,
     LINK: strategyLINK,
   },
@@ -63,6 +68,9 @@ export const AaveMarket: IAaveConfiguration = {
       WETH: ZERO_ADDRESS,
       LINK: ZERO_ADDRESS,
     },
+    // ["localhost"]: {
+    //   USDC: "0x5c5Cd26Ae11a1fc4F1b172C1B91a21B0Db6Bed69",
+    // },
   },
 };
 

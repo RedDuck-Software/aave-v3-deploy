@@ -75,6 +75,7 @@ export const MOCK_CHAINLINK_AGGREGATORS_PRICES: { [key: string]: string } = {
   AGEUR: parseUnits("1.126", 8).toString(),
   JEUR: parseUnits("1.126", 8).toString(),
   DPI: parseUnits("149", 8).toString(),
+  MTBILL: parseUnits("108", 8).toString(),
 };
 
 export const chainlinkAggregatorProxy: Record<string, string> = {

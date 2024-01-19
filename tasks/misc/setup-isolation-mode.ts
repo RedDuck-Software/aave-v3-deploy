@@ -32,8 +32,15 @@ task(
         )
       );
       assetsWithBorrowableIsolationMode.push(asset);
+    } else {
     }
   }
+  // await waitForTx(
+  //   await poolConfigurator.setBorrowableInIsolation(
+  //     "0x288250CF9A37cddcB130B7151145CA1269AC8c0d",
+  //     true
+  //   )
+  // );
   if (assetsWithBorrowableIsolationMode.length) {
     console.log(
       "- Successfully setup isolation mode for:",

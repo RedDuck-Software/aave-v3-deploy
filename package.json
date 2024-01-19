@@ -1,6 +1,6 @@
 {
-  "name": "@aave/deploy-v3",
-  "version": "1.55.3",
+  "name": "@moonler/deploy-v3",
+  "version": "1.0.0",
   "files": [
     "dist",
     "LICENSE",
@@ -23,7 +23,7 @@
   "devDependencies": {
     "@aave/aave-token": "^1.0.4",
     "@aave/core-v3": "^1.19.0",
-    "@aave/periphery-v3": "^2.4.1",
+    "@aave/periphery-v3": "^2.5.0",
     "@aave/safety-module": "^1.0.3",
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.5",
     "@nomicfoundation/hardhat-toolbox": "^2.0.0",
@@ -51,7 +51,7 @@
     "tslint-plugin-prettier": "^2.3.0",
     "typescript": "^4.3.2"
   },
-  "license": "AGPLv3",
+  "license": "UNLICENSED",
   "scripts": {
     "run-env": "npm ci && tail -f /dev/null",
     "cp-typechain": "cp typechain/*.d.ts ./dist/types/typechain",
@@ -60,7 +60,8 @@
     "compile": "SKIP_LOAD=true npx hardhat compile",
     "prepublish": "npm run clean && npm run compile && npm run build",
     "node": "npx hardhat node --no-deploy",
-    "node:fork": "FORK=main npm run node --no-deploy",
+    "node:fork": "FORK=mumbai npm run node --no-deploy",
+    "node:fork:sepolia": "FORK=sepolia npm run node --no-deploy",
     "deploy": "if [ \"$SKIP_COMPILE\" = 'true' ]; then echo '[Warning] Skipping compilation'; else npm run compile; fi && npx hardhat deploy --no-compile",
     "test": "npm run compile && npm run test:fork",
     "test:fork": "MARKET_NAME=Aave FORK=main npx hardhat test ./tests/__setup.spec.ts ./tests/fork/check-list.spec.ts",
@@ -78,7 +79,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/aave/aave-v3-deploy"
+    "url": "git://github.com/aave/aave-v3-deploy.git"
   },
   "dependencies": {
     "defender-relay-client": "^1.11.1"
